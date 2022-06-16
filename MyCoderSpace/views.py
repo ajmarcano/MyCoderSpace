@@ -7,11 +7,11 @@ from MyCoderSpace.models import *
 
 class BlogList(ListView):
     model = BlogModel
-    template_name = "MyCoderSpace/blog.html"
+    template_name = "blog.html"
 
 class BlogDetail(DetailView):
     model = BlogModel
-    template_name = "MyCoderSpace/blogdetail.html"
+    template_name = "blogdetail.html"
 
 class BlogCreate(LoginRequiredMixin, CreateView):
     model = BlogModel
@@ -41,13 +41,13 @@ class BlogDelete(LoginRequiredMixin,UserPassesTestMixin, DeleteView):
         exist = BlogModel.objects.filter(autor=self.request.user.id, id=self.kwargs['pk'])
         return True if exist else False
 
-# class BlogLogin(LoginView):
-#     template_name = 'blog/blog_login.html'
-#     next_page = reverse_lazy("blog_list")
+class BlogLogin(LoginView):
+    template_name = 'login.html'
+    next_page = reverse_lazy("blog")
 
 
-# class BlogLogout(LogoutView):
-#     template_name = 'blog/blog_logout.html'
+class BlogLogout(LogoutView):
+    template_name = 'blog/blog_logout.html'
 
 
 

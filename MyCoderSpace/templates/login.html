@@ -1,0 +1,12 @@
+   <form action="" method="POST">
+
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <button type="submit">Iniciar Sesión</button>
+
+   </form>
+
+   o <form action="create" method="GET">
+        <button type="button">Crear cuenta</button>
+    </form>
