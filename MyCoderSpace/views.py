@@ -57,24 +57,8 @@ class BlogLogin(LoginView):
 class BlogLogout(LogoutView):
     template_name = 'logout.html'
 
-class CrearBlog(View):
-    form_class = CrearBlog
-    context = {
-        "title": "Submit Url",
-        "formulario": form_class
-    }
-    template_name = 'blog.html'
-
-    def get(self, request, *args, **kwargs):
-        return render(request, self.template_name, {"formulario": context})
-
-    def post(self, request, *args, **kwargs):
-        formulario = self.form_class(request.POST)
-        if formulario.is_valid():
-            print(formulario.cleaned_data)
-            return HttpResponseRedirect('/success/')
-
-        return render(request, self.template_name, {"formulario": formulario})
+class About(LogoutView):
+    template_name = 'About.html'
 
 
 

@@ -35,7 +35,7 @@ nav{
   border: 2px solid #0D9EFA;
   border-radius: 15px;
   height: 30px;
-  width: 150px;
+  width: 250px;
   text-align: center;
   text-decoration: none;
   margin-top: 15px;
@@ -45,7 +45,7 @@ nav{
 }
 #navegador {
   display: flex;
-  width: 20%;
+  width: 70%;
 }
 nav a:link {
   color: #0D9EFA;
@@ -108,13 +108,6 @@ a:visited {
   border: 1px solid darkgray;
   border-radius: 5px;
 }
-#blog-img img {
-  width: 100px;
-  margin: 15px auto;
-}
-#texto-blog {
-  margin: 0px 0px 0px 10px;
-}
 #crear-blog-form {
   width: 60%;
   height: 60%;
@@ -125,9 +118,10 @@ a:visited {
   border-radius: 5px;
 }
 #blog-img {
-  margin: auto 10px;
-  width: 50%;
+  margin: auto 20px;
+  width: 100px;
   height: 100px;
+  background: #0D9EFA;
   border-radius: 15px;
 }
 #top-blog {
@@ -279,71 +273,21 @@ h2 {
 p {
   margin: 0px;
 }
-@media (max-width: 1720px){
-  nav {
-    font-size: 14px;
-    width: 60%;
-    padding: 0px;
-  }
-  .navegador {
-    font-size: 14px;
-    width: 40%;
-    height: 1.8em;
-    margin: 18px auto;
-  }
-  #navegador {
-    margin: 0px 0px 0px auto;
-    width: 40%;
-  }
-  #title {
-    font-size: 34px;
-  }
-  #creador {
-    margin-left: 60px;
-    margin-top: 5px;
-  }
-  #cuadricula {
-    width: 50%;
-  }
-  #blogs-titulo {
-    width: 50%;
-  }
-  #blog {
-    width: 100%;
-  }
-  #blog-img {
-    width: 75px;
-    height: 75px;
-    margin-right: 20px;
-  }
-  #texto-blog {
-    font-size: 14px;
-    margin: 0px 0px -40px 0px;;
-    width: 70%;
-    height: 100%;
-  }
-  #texto-blog p {
-    margin: 10px 0px 0px 0px;
-  }
-  #fecha {
-    margin-right: -30px;
-  }
-  #boton-editar {
-    margin-left: auto;
-    margin-right: 0px;
-  }
-  #cuerpo-blog {
-    margin-bottom: -10px;
-    width: 100%;
+@media (max-width: 1960px){
+  #avatar  {
+    width: 150px;
+    height: 150px;
   }
 }
-#botonabout {
-  height: 2.3em;
-  width: 30%;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: auto;
-  margin-right: auto;
+@media (max-width: 1720px){
+  #avatar  {
+    width: 100px;
+    height: 100px;
+  }
+  #datos {
+    margin-top: 10px;
+    font-size: 15px;
+  }
 }
 </style>
 <head>
@@ -360,18 +304,10 @@ p {
     <img src="https://res.cloudinary.com/dk-find-out/image/upload/q_70,c_pad,w_1200,h_630,f_auto/cube_icon_kjijxo.jpg">
     <h1 id="title">MyCoderSpace</h1>
     <nav>
-      {% if user.is_authenticated %}
-      <div id="creador">
-        <a id="link-crear-blog" href="{% url 'create' %}"><p id="crear-blog-boton">Crear un nuevo Blog</p></a>
-      </div>
       <div id="navegador">
-        <a href="{% url 'profile' user.id %}" class="navegador"><p>Ir a mi perfil</p></a>
-        <a href="{% url 'logout' %}" class="navegador"><p>Cerrar Sesión</p></a>
-      {% else %}
-        <a href="{% url 'login' %}" class="navegador"><p>Iniciar Sesión</p></a>
-        <a href="{% url 'create_user' %}" class="navegador"><p>Crear Cuenta</p></a>
+        <a href="{% url 'home' %}" class="navegador"><p>Volver a Página Principal</p></a>
       </div>
-      {% endif %}
+    
     </nav>
   </header>
   {% block contenidoDinamico %}
@@ -379,8 +315,3 @@ p {
   {% endblock %}
 </body>
 </html>
-<footer>
-  
-  <a id = "botonabout" href="{% url 'about' %}" class="navegador"><p>About Us</p></a>
-
-</footer>
