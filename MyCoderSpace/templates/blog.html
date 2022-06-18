@@ -6,15 +6,17 @@
    
 <h1>Lo que Bloggean los Coders</h1>
 
+{% if user.is_authenticated %}
 <a href="{% url 'create' %}"><p>Crear un nuevo Blog</p></a>
+{% endif %}
 
 {% if object_list %}
     {% for blog in object_list %}
 <li>
     <a href="{% url 'detail' blog.id %}">{{blog.titulo}}</a>
     {% if user.is_authenticated %}
-        <a href="{% url 'delete' blog.id %}">Borrar</a>
-        <a href="{% url 'update' blog.id %}">Actualizar</a>
+        <a href="{% url 'delete' blog.id %}">Borrar Blog</a>
+        <a href="{% url 'update' blog.id %}">Actualizar Blog</a>
     {% endif %}
 </li>
     {% endfor %}
