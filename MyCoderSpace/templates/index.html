@@ -228,7 +228,7 @@ h2 {
       <img src="https://i.imgur.com/fMy5RmC.png">
       <h1 id="title">MyCoderSpace</h1>
       <nav>
-        {% if user.is_authenticated == True %}
+        {% if user.is_authenticated %}
           <a href="{% url 'profile' user.id %}"><p>Ir a mi perfil</p></a>
           <a href="{% url 'logout' %}"><p>Cerrar Sesión</p></a>
         {% else %}

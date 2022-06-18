@@ -11,11 +11,12 @@ class BlogList(ListView):
 
 class BlogDetail(DetailView):
     model = BlogModel
-    template_name = "blogdetail.html"
+    template_name = "blog_detail.html"
 
 class BlogCreate(LoginRequiredMixin, CreateView):
     model = BlogModel
-    success_url = reverse_lazy("blog")
+    template_name = "createblog.html"
+    success_url = reverse_lazy("home")
     fields = ['titulo', 'sub_titulo', 'cuerpo']
 
     def form_valid(self, form):
@@ -25,7 +26,8 @@ class BlogCreate(LoginRequiredMixin, CreateView):
 class BlogUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     model = BlogModel
-    success_url = reverse_lazy("blog")
+    template_name = "blog_update.html"
+    success_url = reverse_lazy("home")
     fields = ['titulo', 'sub_titulo', 'cuerpo']
 
     def test_func(self):
@@ -35,7 +37,8 @@ class BlogUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 class BlogDelete(LoginRequiredMixin,UserPassesTestMixin, DeleteView):
 
     model = BlogModel
-    success_url = reverse_lazy("blog")
+    template_name = "blog_delete.html"
+    success_url = reverse_lazy("home")
 
     def test_func(self):
         exist = BlogModel.objects.filter(autor=self.request.user.id, id=self.kwargs['pk'])
