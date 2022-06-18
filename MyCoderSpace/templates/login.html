@@ -1,12 +1,19 @@
-   <form action="" method="POST">
+{% extends "index.html" %}
 
-    {% csrf_token %}
-    {{form.as_p}}
+{% load static %}
 
-    <button type="submit">Iniciar Sesión</button>
+{% block contenidoDinamico %}
+    <form method="POST">
 
-   </form>
+        {% csrf_token %}
+        {{form.as_p}}
 
-   o <form action="create" method="GET">
-        <button type="button">Crear cuenta</button>
+        <button type="submit">Iniciar Sesión</button>
+
     </form>
+
+   o <a href="{% url 'create_user' %}"><button type="button">Crear cuenta</button></a>
+
+   <a href="{% url 'home' %}">ir a home</a>
+
+{% endblock %}

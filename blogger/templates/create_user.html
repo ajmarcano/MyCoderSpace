@@ -1,0 +1,7 @@
+<a href="{% url 'principal' %}">Volver a pagina principal</a>
+
+<form action ="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Crear Cuenta">
+</form>

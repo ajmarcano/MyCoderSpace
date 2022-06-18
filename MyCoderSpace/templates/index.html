@@ -218,7 +218,7 @@ h2 {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MyCoderSpace</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Titan+One&display=swap" rel="stylesheet">
@@ -228,13 +228,18 @@ h2 {
       <img src="https://i.imgur.com/fMy5RmC.png">
       <h1 id="title">MyCoderSpace</h1>
       <nav>
-        <a href="link1"><p>Iniciar sesión</p></a>
-        <a href="link2"><p>Crear Cuenta</p></a>
+        {% if user.is_authenticated == True %}
+          <a href="{% url 'profile' user.id %}"><p>Ir a mi perfil</p></a>
+          <a href="{% url 'logout' %}"><p>Cerrar Sesión</p></a>
+        {% else %}
+          <a href="{% url 'login' %}"><p>Iniciar Sesión</p></a>
+          <a href="{% url 'create_user' %}"><p>Crear Cuenta</p></a>
+        {% endif %}
       </nav>
     </header>
       <div id="cuerpo">
         {% block contenidoDinamico %}
-
+          
         {% endblock %}  
       </div>
   </body>

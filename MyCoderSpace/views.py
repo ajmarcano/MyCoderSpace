@@ -43,11 +43,11 @@ class BlogDelete(LoginRequiredMixin,UserPassesTestMixin, DeleteView):
 
 class BlogLogin(LoginView):
     template_name = 'login.html'
-    next_page = reverse_lazy("blog")
+    next_page = reverse_lazy("home")
 
 
 class BlogLogout(LogoutView):
-    template_name = 'blog/blog_logout.html'
+    template_name = 'logout.html'
 
 
 
