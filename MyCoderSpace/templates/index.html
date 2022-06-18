@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-    header {
+body, html {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Mukta', sans-serif;
+  color: black;
+  border: 0px;
+  background: lightgray;
+}
+header {
   background: white;
   display: flex;
   height: 60px;
@@ -18,66 +26,96 @@ nav{
   margin-top: -5px;
   margin-left: auto;
   margin-right: 20px;
-  width: 30%;
+  width: 65%;
   font-size: 20px;
   justify-content: space-around;
   font-weight: bold;
 }
-nav a {
-  border: 3px solid #0D9EFA;
+.navegador {
+  border: 2px solid #0D9EFA;
   border-radius: 15px;
-  height: 35px;
+  height: 30px;
   width: 150px;
   text-align: center;
   text-decoration: none;
-  margin-top: 12px;
+  margin-top: 15px;
   padding-top: 5px;
+  margin-right: 10px;
+  font-size: 18px;
 }
-a:link {
+#navegador {
+  display: flex;
+  width: 20%;
+}
+nav a:link {
   color: #0D9EFA;
 }
-a:hover {
+nav a:visited {
+  color: #0D9EFA;
+}
+nav a:hover {
   background: #DCF3FA;
 }
 nav p {
   margin: 0px;
   padding: 0px;
 }
-body, html {
-  margin: 0px;
-  padding: 0px;
-  font-family: 'Mukta', sans-serif;
-  height: 100%;
+a:link {
   color: black;
-  border: 0px;
-  background: #0D9EFA;
+}
+a:visited {
+  color: black;
 }
 #cuerpo {
   display: flex;
+  flex-direction: column;
   flex-wrap: nowrap;
-  align-items: center;
-  margin: 0px;
   padding: 0px;
   width: 100%;
-  height: 100%;
-  width: 100%;
+  height: 80%;
 }
 #cuadricula {
-  display: inline-block;
-  height: 92%;
+  display: flex;
+  flex-direction: column-reverse;
+  height: 80%;
   width: 30%;
+  padding: 0px;
   margin-bottom: 0px;
-  margin-top: 0px;
-  margin-right: 10px;
+  margin-top: 10px;
+  margin-right: auto;
   margin-left: auto;
+}
+#blogs-titulo {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  font-size: 25px;
   background: white;
+  color: #0D9EFA;
+  height: 5%;
+  border: 1px solid darkgray;
+  border-radius: 5px;
+  width: 30%;
 }
 #blog {
   display: flex;
-  width: 80%;
-  height: 200px;
-  margin: 40px auto 0px;
+  width: 100%;
+  height: 160px;
+  margin: 0px auto 5px auto;
   background: white;
+  border: 1px solid darkgray;
+  border-radius: 5px;
+}
+#crear-blog-form {
+  width: 60%;
+  height: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  background: white;
+  border: 1px solid darkgray;
+  border-radius: 5px;
 }
 #blog-img {
   margin: auto 20px;
@@ -86,26 +124,70 @@ body, html {
   background: #0D9EFA;
   border-radius: 15px;
 }
+#top-blog {
+  display: flex;
+}
 #autor {
   display: inline-block;
+  margin-top: 10px;
 }
 #fecha {
   display: inline-block;
-  margin-top: 0px;
+  margin-top: 10px;
   margin-left: 20px;
+  margin-right: 0px;
+}
+#boton-borrar {
+  display:inline-block;
+  width: 10%;
+  height: 10px;
+  margin-top: 10px;
+  margin-left: 0px;
+}
+#boton-borrar img{
+  width: 30%;
+}
+#boton-editar {
+  display:inline-block;
+  width: 10%;
+  height: 10px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: -10px;
+}
+#boton-editar img {
+  width: 30%;
 }
 #titulo {
   font-size: 20px;
-  margin-top: -15px;
+  margin-top: -5px;
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
 }
 #subtitulo {
-  margin-top: -30px;
+  margin-top: -5px;
 }
 #cuerpo-blog {
   width: 400px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-style: italic;
+  margin-top: 0px;
+}
+#editar-blogs {
+  display: flex;
+}
+.editar-blogs {
+  margin-top: 5px;
+  margin-right: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  height: 1.5em;
+  width: 35%;
+  text-align: center;
 }
 #perfil-top {
   display: flex;
@@ -117,38 +199,32 @@ body, html {
   width: 200px;
   background: #0D9EFA;
 }
-#datos {
-  font-size: 20px;
-  font-weight: bold;
-  display: inline-block;
-  width: 40%;
-  padding: 0px;
-  margin-top: 40px;
-  margin-right: 10px;
-  margin-left: 20px;
-}
-#bio {
-  margin: 0px 20px;
-  text-align: justify;
-  text-justify: inter-word;
-}
-#separador {
-  height: 2px;
-  width: 90%;
-  margin: 0px auto;
-  background: #0D9EFA;
-}
-#barra-lateral {
-  width: 15%;
-  height: 35%;
-  background: white;
-  margin-right: auto;
-  margin-left: 10px;
-  margin-top: 42px;
-  margin-bottom: auto;
-}
 #crear-blog {
   width: 100%;
+  height: 100%;
+}
+#creador {
+  width: 20%;
+  margin-right: -30px;
+}
+#crear-blog-boton {
+  background: white;
+  text-align: center;
+  width: 100%;
+  margin-top: 15px;
+  margin-right: auto;
+  border: 2px solid #FA5A19;
+  border-radius: 5px;
+}
+a:link#link-crear-blog {
+  color: darkred;
+}
+a:visited#link-crear-blog {
+  color: darkred;
+}
+a:hover#link-crear-blog {
+  color: darkred;
+  background: lightcoral;
 }
 #formulario {
   display: flex;
@@ -178,6 +254,8 @@ h2 {
   margin-right: 0px;
   margin-left: 0px;
   padding: 0px;
+  border: 1px solid darkgray;
+  border-radius: 5px;
 }
 #input-buscar {
   margin: auto;
@@ -192,10 +270,8 @@ h2 {
   margin-left: auto;
   margin-right: auto;
 }
-#blogs-titulo {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 25px;
+p {
+  margin: 0px;
 }
 @media (max-width: 1960px){
   #avatar  {
@@ -224,23 +300,26 @@ h2 {
     <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Titan+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-      <img src="https://i.imgur.com/fMy5RmC.png">
-      <h1 id="title">MyCoderSpace</h1>
-      <nav>
-        {% if user.is_authenticated %}
-          <a href="{% url 'profile' user.id %}"><p>Ir a mi perfil</p></a>
-          <a href="{% url 'logout' %}"><p>Cerrar Sesión</p></a>
-        {% else %}
-          <a href="{% url 'login' %}"><p>Iniciar Sesión</p></a>
-          <a href="{% url 'create_user' %}"><p>Crear Cuenta</p></a>
-        {% endif %}
-      </nav>
-    </header>
-      <div id="cuerpo">
-        {% block contenidoDinamico %}
-          
-        {% endblock %}  
+  <header>
+    <img src="https://i.imgur.com/fMy5RmC.png">
+    <h1 id="title">MyCoderSpace</h1>
+    <nav>
+      {% if user.is_authenticated %}
+      <div id="creador">
+        <a id="link-crear-blog" href="{% url 'create' %}"><p id="crear-blog-boton">Crear un nuevo Blog</p></a>
       </div>
-  </body>
+      <div id="navegador">
+        <a href="{% url 'profile' user.id %}" class="navegador"><p>Ir a mi perfil</p></a>
+        <a href="{% url 'logout' %}" class="navegador"><p>Cerrar Sesión</p></a>
+      {% else %}
+        <a href="{% url 'login' %}" class="navegador"><p>Iniciar Sesión</p></a>
+        <a href="{% url 'create_user' %}" class="navegador"><p>Crear Cuenta</p></a>
+      </div>
+      {% endif %}
+    </nav>
+  </header>
+  {% block contenidoDinamico %}
+    
+  {% endblock %}
+</body>
 </html>

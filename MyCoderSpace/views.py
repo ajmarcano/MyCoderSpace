@@ -4,6 +4,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView, LogoutView
 from MyCoderSpace.models import *
+from MyCoderSpace.forms import *
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest
+from django.template import loader
+from django.views import View
+from MyCoderSpace.forms import CrearBlog
 
 class BlogList(ListView):
     model = BlogModel
@@ -52,6 +57,24 @@ class BlogLogin(LoginView):
 class BlogLogout(LogoutView):
     template_name = 'logout.html'
 
+class CrearBlog(View):
+    form_class = CrearBlog
+    context = {
+        "title": "Submit Url",
+        "formulario": form_class
+    }
+    template_name = 'blog.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, {"formulario": context})
+
+    def post(self, request, *args, **kwargs):
+        formulario = self.form_class(request.POST)
+        if formulario.is_valid():
+            print(formulario.cleaned_data)
+            return HttpResponseRedirect('/success/')
+
+        return render(request, self.template_name, {"formulario": formulario})
 
 
 
