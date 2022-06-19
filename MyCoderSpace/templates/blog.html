@@ -9,8 +9,7 @@
                 {% if object_list %}
                 {% for blog in object_list %}                    
                     <div id="blog">  
-                        
-                        <div id="blog-img"></div>          
+                        <div id="blog-img"><img src='{{blog.imagen}}'></div>          
                         <div id="texto-blog">
                             <div id="top-blog">
                                 <p id="autor">Por: {{blog.autor}}</p>

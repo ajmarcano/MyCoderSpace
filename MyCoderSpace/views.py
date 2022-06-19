@@ -4,11 +4,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView, LogoutView
 from MyCoderSpace.models import *
-from MyCoderSpace.forms import *
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest
 from django.template import loader
 from django.views import View
-from MyCoderSpace.forms import CrearBlog
 
 class BlogList(ListView):
     model = BlogModel
@@ -22,7 +20,7 @@ class BlogCreate(LoginRequiredMixin, CreateView):
     model = BlogModel
     template_name = "createblog.html"
     success_url = reverse_lazy("home")
-    fields = ['titulo', 'sub_titulo', 'cuerpo']
+    fields = ['titulo', 'sub_titulo', 'cuerpo', 'imagen']
 
     def form_valid(self, form):
         form.instance.autor = self.request.user
@@ -33,7 +31,7 @@ class BlogUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = BlogModel
     template_name = "blog_update.html"
     success_url = reverse_lazy("home")
-    fields = ['titulo', 'sub_titulo', 'cuerpo']
+    fields = ['titulo', 'sub_titulo', 'cuerpo', 'imagen']
 
     def test_func(self):
         exist = BlogModel.objects.filter(autor=self.request.user.id, id=self.kwargs['pk'])
@@ -57,8 +55,11 @@ class BlogLogin(LoginView):
 class BlogLogout(LogoutView):
     template_name = 'logout.html'
 
-class About(LogoutView):
-    template_name = 'About.html'
+def About(request):
+    template = loader.get_template('About.html')
+    context={}
+
+    return HttpResponse(template.render(context, request))
 
 
 

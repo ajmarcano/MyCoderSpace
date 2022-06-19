@@ -47,18 +47,45 @@ nav{
   display: flex;
   width: 20%;
 }
-nav a:link {
+.navegador:link {
   color: #0D9EFA;
 }
-nav a:visited {
-  color: #0D9EFA;
-}
-nav a:hover {
+.navegador:hover {
   background: #DCF3FA;
 }
+.navegador:visited {
+  color: #0D9EFA;
+}
+
 nav p {
   margin: 0px;
   padding: 0px;
+}
+#crear-blog-boton {
+  text-align: center;
+  width: 100%;
+  margin-top: 15px;
+  margin-right: auto;
+  color: darkred;
+  border: 2px solid #FA5A19;
+  border-radius: 5px;
+  text-decoration: none;
+}
+#creador a{
+  text-decoration: none;
+}
+#crear-blog-boton:link {
+  color: darkred;
+  text-decoration: none;
+}
+
+#crear-blog-boton:hover {
+  color: darkred;
+  background: coral;
+}
+#crear-blog-boton:visited {
+  color: darkred;
+  text-decoration: none;
 }
 a:link {
   color: black;
@@ -108,6 +135,13 @@ a:visited {
   border: 1px solid darkgray;
   border-radius: 5px;
 }
+#blog-img img {
+  width: 100px;
+  margin: 15px auto;
+}
+#texto-blog {
+  margin: 0px 0px 0px 10px;
+}
 #crear-blog-form {
   width: 60%;
   height: 60%;
@@ -118,10 +152,9 @@ a:visited {
   border-radius: 5px;
 }
 #blog-img {
-  margin: auto 20px;
-  width: 100px;
+  margin: auto 10px;
+  width: 50%;
   height: 100px;
-  background: #0D9EFA;
   border-radius: 15px;
 }
 #top-blog {
@@ -163,9 +196,6 @@ a:visited {
   margin-top: -5px;
   text-decoration: none;
 }
-a {
-  text-decoration: none;
-}
 #subtitulo {
   margin-top: -5px;
 }
@@ -184,7 +214,6 @@ a {
   margin-top: 5px;
   margin-right: 10px;
   border-radius: 5px;
-  text-decoration: none;
   height: 1.5em;
   width: 35%;
   text-align: center;
@@ -206,25 +235,6 @@ a {
 #creador {
   width: 20%;
   margin-right: -30px;
-}
-#crear-blog-boton {
-  background: white;
-  text-align: center;
-  width: 100%;
-  margin-top: 15px;
-  margin-right: auto;
-  border: 2px solid #FA5A19;
-  border-radius: 5px;
-}
-a:link#link-crear-blog {
-  color: darkred;
-}
-a:visited#link-crear-blog {
-  color: darkred;
-}
-a:hover#link-crear-blog {
-  color: darkred;
-  background: lightcoral;
 }
 #formulario {
   display: flex;
@@ -273,29 +283,72 @@ h2 {
 p {
   margin: 0px;
 }
-@media (max-width: 1960px){
-  #avatar  {
-    width: 150px;
-    height: 150px;
+@media (max-width: 1720px){
+  nav {
+    font-size: 14px;
+    width: 60%;
+    padding: 0px;
+  }
+  .navegador {
+    font-size: 14px;
+    width: 40%;
+    height: 1.8em;
+    margin: 18px auto;
+  }
+  #navegador {
+    margin: 0px 0px 0px auto;
+    width: 40%;
+  }
+  #title {
+    font-size: 34px;
+  }
+  #creador {
+    margin-left: 60px;
+    margin-top: 5px;
+  }
+  #cuadricula {
+    width: 50%;
+  }
+  #blogs-titulo {
+    width: 50%;
+  }
+  #blog {
+    width: 100%;
+  }
+  #blog-img {
+    width: 75px;
+    height: 75px;
+    margin-right: 20px;
+  }
+  #texto-blog {
+    font-size: 14px;
+    margin: 0px 0px -40px 0px;;
+    width: 70%;
+    height: 100%;
+  }
+  #texto-blog p {
+    margin: 10px 0px 0px 0px;
+  }
+  #fecha {
+    margin-right: -30px;
+  }
+  #boton-editar {
+    margin-left: auto;
+    margin-right: 0px;
+  }
+  #cuerpo-blog {
+    margin-bottom: -10px;
+    width: 100%;
   }
 }
-@media (max-width: 1720px){
-  #avatar  {
-    width: 100px;
-    height: 100px;
-  }
-  #datos {
-    margin-top: 10px;
-    font-size: 15px;
-  }
+footer {
+  width: 100%;
+  text-align: center;
 }
 #botonabout {
   height: 2.3em;
   width: 30%;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: auto;
-  margin-right: auto;
+  text-decoration: underline;
 }
 </style>
 <head>
@@ -330,9 +383,9 @@ p {
     
   {% endblock %}
 </body>
-</html>
 <footer>
   
-  <a id = "botonabout" href="{% url 'about' %}" class="navegador"><p>About Us</p></a>
+  <a id="about" href="{% url 'about' %}" ><p>About Us</p></a>
 
 </footer>
+</html>

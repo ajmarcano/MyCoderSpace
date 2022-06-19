@@ -8,12 +8,16 @@ body, html {
   color: black;
   border: 0px;
   background: lightgray;
+  height: 100%;
 }
 header {
   background: white;
   display: flex;
   height: 60px;
   color: #0D9EFA;
+}
+header img {
+  width: 114px;
 }
 #title {
   margin-top: 5px;
@@ -85,37 +89,21 @@ a:visited {
   margin-right: auto;
   margin-left: auto;
 }
-#blogs-titulo {
-  margin-top: 20px;
-  margin-bottom: 0px;
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
-  font-size: 25px;
-  background: white;
-  color: #0D9EFA;
-  height: 5%;
-  border: 1px solid darkgray;
-  border-radius: 5px;
-  width: 30%;
-}
 #blog {
   display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 160px;
-  margin: 0px auto 5px auto;
+  height: 100%;
+  margin: auto;
   background: white;
   border: 1px solid darkgray;
   border-radius: 5px;
+  align-items: center;
 }
-#crear-blog-form {
-  width: 60%;
-  height: 60%;
-  margin-right: auto;
-  margin-left: auto;
-  background: white;
-  border: 1px solid darkgray;
-  border-radius: 5px;
+#texto-blog {
+  margin: 0px 20px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 #blog-img {
   margin: auto 20px;
@@ -124,50 +112,8 @@ a:visited {
   background: #0D9EFA;
   border-radius: 15px;
 }
-#top-blog {
-  display: flex;
-}
-#autor {
-  display: inline-block;
-  margin-top: 10px;
-}
-#fecha {
-  display: inline-block;
-  margin-top: 10px;
-  margin-left: 20px;
-  margin-right: 0px;
-}
-#boton-borrar {
-  display:inline-block;
-  width: 10%;
-  height: 10px;
-  margin-top: 10px;
-  margin-left: 0px;
-}
-#boton-borrar img{
-  width: 30%;
-}
-#boton-editar {
-  display:inline-block;
-  width: 10%;
-  height: 10px;
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: -10px;
-}
-#boton-editar img {
-  width: 30%;
-}
-#titulo {
-  font-size: 20px;
-  margin-top: -5px;
-  text-decoration: none;
-}
 a {
   text-decoration: none;
-}
-#subtitulo {
-  margin-top: -5px;
 }
 #cuerpo-blog {
   width: 400px;
@@ -176,28 +122,6 @@ a {
   text-overflow: ellipsis;
   font-style: italic;
   margin-top: 0px;
-}
-#editar-blogs {
-  display: flex;
-}
-.editar-blogs {
-  margin-top: 5px;
-  margin-right: 10px;
-  border-radius: 5px;
-  text-decoration: none;
-  height: 1.5em;
-  width: 35%;
-  text-align: center;
-}
-#perfil-top {
-  display: flex;
-}
-#avatar {
-  display: inline-block;
-  margin: 10px;
-  height: 200px;
-  width: 200px;
-  background: #0D9EFA;
 }
 #crear-blog {
   width: 100%;
@@ -226,52 +150,20 @@ a:hover#link-crear-blog {
   color: darkred;
   background: lightcoral;
 }
-#formulario {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  height: 100%;
-  margin: 0px auto;
-}
-.inputs {
-  margin-bottom: 10px;
-  height: 2em;
-}
-#boton-enviar {
-  width: 40%;
-  margin: 10px auto;
-  height: 2.3em 
-}
 h2 {
   font-size: 22px;
-}
-#buscar-usuario {
-  display: flex;
-  height: 15%;
-  width: 100%;
-  background: white;
-  margin-top: 20px;
-  margin-right: 0px;
-  margin-left: 0px;
-  padding: 0px;
-  border: 1px solid darkgray;
-  border-radius: 5px;
-}
-#input-buscar {
-  margin: auto;
-  width: 50%;  
-  height: 2em;
-}
-#boton-buscar {
-  height: 2.3em;
-  width: 30%;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
 }
 p {
   margin: 0px;
+}
+img {
+  width: 240px;
+}
+#imagenes-about {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
 }
 @media (max-width: 1960px){
   #avatar  {
@@ -311,7 +203,27 @@ p {
     </nav>
   </header>
   {% block contenidoDinamico %}
-    
+    <div id="cuerpo">
+      <div id="cuadricula">
+        <div id="blog">
+          <div id="texto-blog">
+            <h2><strong>MyCoderSpace</strong></h2> 
+            <p>Es un proyecto de Red Social tipo Blog enfocado a programadores donde pueden compartir su día a día o discutir sobre sus proyectos.</p>
+            <br>
+            <p>Fue creado por:</p>
+          </div>
+          <ul>
+            <li>Alejandro Barrios (izq), 30 años de edad, graduado en La Universidad del Zulia, Venezuela en Ingeniería Mecánica en el 2013</li>
+            <p>y</p>
+            <li>Alvaro Marcano (der), 30 años de edad, graduado en La Universidad del Zulia, Venezuela en Medicina en el 2016</li>
+          </ul>
+          <div id="imagenes-about">
+            <img src="https://avatars.githubusercontent.com/u/105756366?v=4">
+            <img src="https://avatars.githubusercontent.com/u/97192729?v=4">
+          </div>
+        </div>
+      </div>
+    </div>
   {% endblock %}
 </body>
 </html>
