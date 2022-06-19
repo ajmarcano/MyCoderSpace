@@ -47,18 +47,45 @@ nav{
   display: flex;
   width: 20%;
 }
-nav a:link {
+.navegador:link {
   color: #0D9EFA;
 }
-nav a:visited {
-  color: #0D9EFA;
-}
-nav a:hover {
+.navegador:hover {
   background: #DCF3FA;
 }
+.navegador:visited {
+  color: #0D9EFA;
+}
+
 nav p {
   margin: 0px;
   padding: 0px;
+}
+#crear-blog-boton {
+  text-align: center;
+  width: 100%;
+  margin-top: 15px;
+  margin-right: auto;
+  color: darkred;
+  border: 2px solid #FA5A19;
+  border-radius: 5px;
+  text-decoration: none;
+}
+#creador a{
+  text-decoration: none;
+}
+#crear-blog-boton:link {
+  color: darkred;
+  text-decoration: none;
+}
+
+#crear-blog-boton:hover {
+  color: darkred;
+  background: coral;
+}
+#crear-blog-boton:visited {
+  color: darkred;
+  text-decoration: none;
 }
 a:link {
   color: black;
@@ -169,9 +196,6 @@ a:visited {
   margin-top: -5px;
   text-decoration: none;
 }
-a {
-  text-decoration: none;
-}
 #subtitulo {
   margin-top: -5px;
 }
@@ -190,7 +214,6 @@ a {
   margin-top: 5px;
   margin-right: 10px;
   border-radius: 5px;
-  text-decoration: none;
   height: 1.5em;
   width: 35%;
   text-align: center;
@@ -212,25 +235,6 @@ a {
 #creador {
   width: 20%;
   margin-right: -30px;
-}
-#crear-blog-boton {
-  background: white;
-  text-align: center;
-  width: 100%;
-  margin-top: 15px;
-  margin-right: auto;
-  border: 2px solid #FA5A19;
-  border-radius: 5px;
-}
-a:link#link-crear-blog {
-  color: darkred;
-}
-a:visited#link-crear-blog {
-  color: darkred;
-}
-a:hover#link-crear-blog {
-  color: darkred;
-  background: lightcoral;
 }
 #formulario {
   display: flex;
@@ -337,6 +341,15 @@ p {
     width: 100%;
   }
 }
+footer {
+  width: 100%;
+  text-align: center;
+}
+#botonabout {
+  height: 2.3em;
+  width: 30%;
+  text-decoration: underline;
+}
 </style>
 <head>
     <meta charset="UTF-8">
@@ -349,7 +362,7 @@ p {
 </head>
 <body>
   <header>
-    <img src="https://i.imgur.com/fMy5RmC.png">
+    <img src="https://res.cloudinary.com/dk-find-out/image/upload/q_70,c_pad,w_1200,h_630,f_auto/cube_icon_kjijxo.jpg">
     <h1 id="title">MyCoderSpace</h1>
     <nav>
       {% if user.is_authenticated %}
@@ -370,4 +383,9 @@ p {
     
   {% endblock %}
 </body>
+<footer>
+  
+  <a id="about" href="{% url 'about' %}" ><p>About Us</p></a>
+
+</footer>
 </html>
