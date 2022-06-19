@@ -4,11 +4,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView, LogoutView
 from MyCoderSpace.models import *
-from MyCoderSpace.forms import *
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest
 from django.template import loader
 from django.views import View
-from MyCoderSpace.forms import CrearBlog
 
 class BlogList(ListView):
     model = BlogModel
@@ -57,8 +55,11 @@ class BlogLogin(LoginView):
 class BlogLogout(LogoutView):
     template_name = 'logout.html'
 
-class About(LogoutView):
-    template_name = 'About.html'
+def About(request):
+    template = loader.get_template('About.html')
+    context={}
+
+    return HttpResponse(template.render(context, request))
 
 
 
