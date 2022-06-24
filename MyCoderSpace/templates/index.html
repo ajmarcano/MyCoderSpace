@@ -5,12 +5,12 @@ body, html {
   margin: 0px;
   padding: 0px;
   font-family: 'Mukta', sans-serif;
-  color: black;
+  color: rgb(255, 255, 255);
   border: 0px;
-  background: lightgray;
+  background: white;
 }
 header {
-  background: white;
+  background: rgb(61, 61, 61);
   display: flex;
   height: 60px;
   color: #0D9EFA;
@@ -19,7 +19,9 @@ header {
   margin-top: 5px;
   font-family: 'Titan One', cursive;
   font-size: 40px;
-  font-weight: normal
+  font-weight: normal;
+  color: #0D9EFA;
+  text-shadow: 2px 2px 2px black;
 }
 nav{
   display: flex;
@@ -52,6 +54,7 @@ nav{
 }
 .navegador:hover {
   background: #DCF3FA;
+  color: #0D9EFA;
 }
 .navegador:visited {
   color: #0D9EFA;
@@ -66,7 +69,7 @@ nav p {
   width: 100%;
   margin-top: 15px;
   margin-right: auto;
-  color: darkred;
+  color: #f38b29;
   border: 2px solid #FA5A19;
   border-radius: 5px;
   text-decoration: none;
@@ -88,10 +91,15 @@ nav p {
   text-decoration: none;
 }
 a:link {
-  color: black;
+  color: #0D9EFA;
 }
 a:visited {
-  color: black;
+  color: #0D9EFA;
+}
+#imagen-usuario {
+  margin: auto;
+  width: 60%;
+  height: 60%;
 }
 #cuerpo {
   display: flex;
@@ -119,10 +127,10 @@ a:visited {
   margin-left: auto;
   text-align: center;
   font-size: 25px;
-  background: white;
+  background: rgb(61, 61, 61);
   color: #0D9EFA;
   height: 5%;
-  border: 1px solid darkgray;
+  border: 1px solid black;
   border-radius: 5px;
   width: 30%;
 }
@@ -131,8 +139,8 @@ a:visited {
   width: 100%;
   height: 160px;
   margin: 0px auto 5px auto;
-  background: white;
-  border: 1px solid darkgray;
+  background: rgb(61, 61, 61);
+  border: 1px solid black;
   border-radius: 5px;
 }
 #blog-img img {
@@ -370,6 +378,8 @@ footer {
         <a id="link-crear-blog" href="{% url 'create' %}"><p id="crear-blog-boton">Crear un nuevo Blog</p></a>
       </div>
       <div id="navegador">
+        <img id="imagen-usuario" src="{{ Avatar.imagen.url }}"/>
+        {{user.username}}
         <a href="{% url 'profile' user.id %}" class="navegador"><p>Ir a mi perfil</p></a>
         <a href="{% url 'logout' %}" class="navegador"><p>Cerrar Sesión</p></a>
       {% else %}

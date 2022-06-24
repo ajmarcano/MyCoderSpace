@@ -2,7 +2,7 @@
 <html lang="en">
 <style>
 header {
-  background: white;
+  background: rgb(61, 61, 61);
   display: flex;
   height: 60px;
   color: #0D9EFA;
@@ -50,9 +50,9 @@ body, html {
   margin: 0px;
   padding: 0px;
   font-family: 'Mukta', sans-serif;
-  color: black;
+  color: white;
   border: 0px;
-  background: lightgray;
+  background: white;
 }
 #cuerpo {
   display: flex;
@@ -75,9 +75,9 @@ body, html {
   margin-bottom: 0px;
   text-align: center;
   font-size: 25px;
-  background: white;
+  background: rgb(61, 61, 61);
   height: 5%;
-  border: 1px solid darkgray;
+  border: 1px solid black;
   border-radius: 5px;
 }
 #blog {
@@ -85,8 +85,8 @@ body, html {
   width: 100%;
   height: 30%;
   margin: 10px auto;
-  background: white;
-  border: 1px solid darkgray;
+  background: rgb(61, 61, 61);
+  border: 1px solid black;
   border-radius: 5px;
 }
 #texto-blog {
@@ -98,10 +98,8 @@ h2 {
   text-align: center;
 }
 #blog-img {
-  margin: auto 20px;
-  width: 100px;
-  height: 100px;
-  background: #0D9EFA;
+  margin: 0px auto;
+  width: 40%;
   border-radius: 15px;
 }
 #autor {
@@ -175,6 +173,7 @@ h2 {
       <div id="blog">
         <div id="texto-blog"> 
           <h2>Mi Perfil</h2>
+            <img id="blog-img" src="{{ object.avatar_set.first.imagen.url }}"/>
             <p>Nombre: {{object.first_name}}</p>
             <p>Apellido: {{object.last_name}}</p>
             <p>Correo electronico: {{object.email}}</p>

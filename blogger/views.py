@@ -5,6 +5,8 @@ from django.views.generic import CreateView, UpdateView, DetailView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
+from blogger.models import Avatar
+from django.contrib.auth.decorators import login_required
 
 class SignUpView(SuccessMessageMixin, CreateView):
     template_name = 'create_user.html'
