@@ -352,6 +352,7 @@ p {
 footer {
   width: 100%;
   text-align: center;
+  margin-bottom: 20px;
 }
 #botonabout {
   height: 2.3em;
@@ -378,8 +379,6 @@ footer {
         <a id="link-crear-blog" href="{% url 'create' %}"><p id="crear-blog-boton">Crear un nuevo Blog</p></a>
       </div>
       <div id="navegador">
-        <img id="imagen-usuario" src="{{ Avatar.imagen.url }}"/>
-        {{user.username}}
         <a href="{% url 'profile' user.id %}" class="navegador"><p>Ir a mi perfil</p></a>
         <a href="{% url 'logout' %}" class="navegador"><p>Cerrar Sesión</p></a>
       {% else %}
