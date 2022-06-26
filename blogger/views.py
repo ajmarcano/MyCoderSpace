@@ -6,6 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
 <<<<<<< HEAD
+<<<<<<< HEAD
 from django.contrib.auth.decorators import login_required
 from blogger.forms import UserForm
 from django.shortcuts import redirect
@@ -24,6 +25,9 @@ def register(request):
 
 =======
 
+=======
+
+>>>>>>> refs/remotes/origin/main
 class SignUpView(SuccessMessageMixin, CreateView):
     template_name = 'create_user.html'
     success_url = reverse_lazy('home')
@@ -42,4 +46,7 @@ class BloggerUpdate(LoginRequiredMixin, UpdateView):
     
     def get_success_url(self):
       return reverse_lazy("profile", kwargs={"pk": self.request.user.id})
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/main
+=======
 >>>>>>> refs/remotes/origin/main

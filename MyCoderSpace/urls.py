@@ -3,8 +3,11 @@ from MyCoderSpace import views
 
 urlpatterns = [
 <<<<<<< HEAD
+<<<<<<< HEAD
     path("pages", views.BlogList.as_view(), name = "home"),
 =======
+=======
+>>>>>>> refs/remotes/origin/main
     path("login/", views.BlogLogin.as_view(), name = "login"),
     path("", views.BlogList.as_view(), name = "home"),
 >>>>>>> refs/remotes/origin/main
@@ -13,10 +16,16 @@ urlpatterns = [
     path("update/<pk>/", views.BlogUpdate.as_view(), name = "update"),
     path("delete/<pk>/", views.BlogDelete.as_view(), name = "delete"),
 <<<<<<< HEAD
+<<<<<<< HEAD
     path('About/', views.About, name="about"),
     path('', views.Home, name="principal"),
 ]
 
+=======
+    path("logout", views.BlogLogout.as_view(), name='logout'),
+    path('About/', views.About, name="about")
+]
+>>>>>>> refs/remotes/origin/main
 =======
     path("logout", views.BlogLogout.as_view(), name='logout'),
     path('About/', views.About, name="about")

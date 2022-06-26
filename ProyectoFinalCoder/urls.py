@@ -22,11 +22,15 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('MyCoderSpace.urls')),
 <<<<<<< HEAD
+<<<<<<< HEAD
     path('accounts/', include('blogger.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('accounts/', include('bloggerlogin.urls')),
     path('accounts/', include('bloggerprofile.urls')),
     
+=======
+    path('blogger/', include('blogger.urls'))
+>>>>>>> refs/remotes/origin/main
 =======
     path('blogger/', include('blogger.urls'))
 >>>>>>> refs/remotes/origin/main

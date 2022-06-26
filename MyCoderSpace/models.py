@@ -10,6 +10,9 @@ class BlogModel(models.Model):
 =======
     cuerpo = models.TextField()
     imagen = models.URLField(max_length=300)
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/main
+=======
 >>>>>>> refs/remotes/origin/main
     autor = models.ForeignKey(User, on_delete=models.CASCADE)
     fecha_creacion = models.DateField(auto_now_add=True)

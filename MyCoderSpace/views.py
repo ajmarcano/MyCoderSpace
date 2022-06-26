@@ -55,6 +55,9 @@ def About(request):
 class BlogLogin(LoginView):
     template_name = 'login.html'
     next_page = reverse_lazy("home")
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/main
+=======
 >>>>>>> refs/remotes/origin/main
 
     return HttpResponse(template.render(context, request))
@@ -68,6 +71,9 @@ class BlogLogout(LogoutView):
 
 def About(request):
     template = loader.get_template('About.html')
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/main
+=======
 >>>>>>> refs/remotes/origin/main
     context={}
 
