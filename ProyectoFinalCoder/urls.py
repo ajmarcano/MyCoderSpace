@@ -21,23 +21,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('MyCoderSpace.urls')),
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     path('accounts/', include('blogger.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('accounts/', include('bloggerlogin.urls')),
     path('accounts/', include('bloggerprofile.urls')),
-    
-=======
-    path('blogger/', include('blogger.urls'))
->>>>>>> refs/remotes/origin/main
-=======
-    path('blogger/', include('blogger.urls'))
->>>>>>> refs/remotes/origin/main
-=======
-    path('accounts/', include('blogger.urls'))
->>>>>>> f6ca7e7598b410628912125949f7b288ba679a80
 ]
 
 urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
