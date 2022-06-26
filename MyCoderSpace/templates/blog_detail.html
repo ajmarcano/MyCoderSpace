@@ -1,0 +1,43 @@
+{% extends "createblog.html" %}
+
+{% load static %}
+
+{% block contenidoDinamico %}
+<style>
+#blog {
+  height: 30%;
+}
+#texto-blog {
+  margin: 20px;
+}
+#titulo {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: 800;
+}
+#sub_titulo {
+  font-style: italic;
+  margin-top: 0px;
+}
+#cuerpo-blog2 {
+  margin-top: 20px;
+}
+#imagen {
+  width: 100%;
+}
+</style>
+    <div id="cuerpo">
+      <div id="cuadricula">
+        <div id="blog">
+          <div id="texto-blog"> 
+            <p id="autor">Por: {{object.autor}}</p>
+            <p id="fecha">{{object.fecha_creacion}}</p>
+            <p id="titulo">{{object.titulo}}</p>
+            <p id="sub_titulo">{{object.sub_titulo}}</p>
+            <img id="imagen" src='{{object.imagen}}'>
+            <p id="cuerpo-blog2">{{object.cuerpo|safe}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

@@ -4,6 +4,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView, LogoutView
 from MyCoderSpace.models import *
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest
+from django.template import loader
+from django.views import View
 
 class BlogList(ListView):
     model = BlogModel
@@ -11,12 +14,13 @@ class BlogList(ListView):
 
 class BlogDetail(DetailView):
     model = BlogModel
-    template_name = "blogdetail.html"
+    template_name = "blog_detail.html"
 
 class BlogCreate(LoginRequiredMixin, CreateView):
     model = BlogModel
-    success_url = reverse_lazy("blog")
-    fields = ['titulo', 'sub_titulo', 'cuerpo']
+    template_name = "createblog.html"
+    success_url = reverse_lazy("home")
+    fields = ['titulo', 'sub_titulo', 'cuerpo', 'imagen']
 
     def form_valid(self, form):
         form.instance.autor = self.request.user
@@ -25,8 +29,9 @@ class BlogCreate(LoginRequiredMixin, CreateView):
 class BlogUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     model = BlogModel
-    success_url = reverse_lazy("blog")
-    fields = ['titulo', 'sub_titulo', 'cuerpo']
+    template_name = "blog_update.html"
+    success_url = reverse_lazy("home")
+    fields = ['titulo', 'sub_titulo', 'cuerpo', 'imagen']
 
     def test_func(self):
         exist = BlogModel.objects.filter(autor=self.request.user.id, id=self.kwargs['pk'])
@@ -35,20 +40,24 @@ class BlogUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 class BlogDelete(LoginRequiredMixin,UserPassesTestMixin, DeleteView):
 
     model = BlogModel
-    success_url = reverse_lazy("blog")
+    template_name = "blog_delete.html"
+    success_url = reverse_lazy("home")
 
     def test_func(self):
         exist = BlogModel.objects.filter(autor=self.request.user.id, id=self.kwargs['pk'])
         return True if exist else False
 
-class BlogLogin(LoginView):
-    template_name = 'login.html'
-    next_page = reverse_lazy("blog")
+def About(request):
+    template = loader.get_template('About.html')
+    context={}
 
+    return HttpResponse(template.render(context, request))
 
-class BlogLogout(LogoutView):
-    template_name = 'blog/blog_logout.html'
+def Home(request):
+    template = loader.get_template("home.html")
+    context={}
 
+    return HttpResponse(template.render(context, request))
 
 
 

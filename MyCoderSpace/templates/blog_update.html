@@ -1,0 +1,24 @@
+{% extends "createblog.html" %}
+
+{% load static %}
+
+{% block contenidoDinamico %}
+
+    <div id="cuerpo">
+        <div id="cuadricula">
+            <div id="blog">
+                <div id="texto-blog"> 
+                    <h2>Actualizar Blog</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        <label><p>Titulo</p> {{ form.titulo }}</label>
+                        <label><p>Subtitulo</p>{{ form.sub_titulo }}</label>
+                        <label><p>Cuerpo</p>{{ form.cuerpo }} {{ form.media }}</label>
+                        <label><p>Imagen</p>{{ form.imagen }}</label>
+                        <input id="boton-guardar" type="submit" value="Guardar">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

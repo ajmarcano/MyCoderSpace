@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+header {
+  background: rgb(61, 61, 61);
+  display: flex;
+  height: 60px;
+  color: #0D9EFA;
+}
+#title {
+  margin-top: 5px;
+  font-family: 'Titan One', cursive;
+  font-size: 40px;
+  font-weight: normal
+}
+nav{
+  display: flex;
+  margin-left: auto;
+  margin-right: 200px;
+  width: 15%;
+  font-size: 20px;
+  justify-content: space-around;
+  font-weight: bold;
+}
+nav a {
+  border: 2px solid #0D9EFA;
+  border-radius: 15px;
+  height: 30px;
+  width: 120px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 12px;
+  padding-top: 5px;
+  font-size: 18px;
+}
+a:link {
+  color: #0D9EFA;
+}
+a:visited {
+  color: #0D9EFA;
+}
+a:hover {
+  background: #DCF3FA;
+}
+nav p {
+  margin: 0px;
+  padding: 0px;
+}
+body, html {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Mukta', sans-serif;
+  color: white;
+  border: 0px;
+  background: white;
+  height: 100%;
+}
+#cuerpo {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  width: 100%;
+}
+#cuadricula {
+  display: inline-block;
+  height: 92%;
+  width: 30%;
+  margin: 0px auto;
+}
+#blog {
+  display: flex;
+  width: 80%;
+  height: 35%;
+  margin: 10px auto;
+  background: rgb(61, 61, 61);
+  border: 1px solid black;
+  border-radius: 5px;
+}
+#iniciar-sesion {
+    text-align: center;
+}
+#texto-blog {
+  margin: 0px auto 20px auto;
+}
+#blog-img {
+  margin: auto 20px;
+  width: 100px;
+  height: 100px;
+  background: #0D9EFA;
+  border-radius: 15px;
+}
+#autor {
+  display: inline-block;
+}
+#fecha {
+  display: inline-block;
+  margin-top: 0px;
+  margin-left: 20px;
+}
+#titulo {
+  font-size: 20px;
+  margin-top: -15px;
+}
+#subtitulo {
+  margin-top: -30px;
+}
+#cuerpo-blog {
+  width: 400px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 1720px){
+  nav {
+    font-size: 14px;
+    width: 20%;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: 0px;
+  }
+  nav a {
+    font-size: 14px;
+    height: 1.8em;
+  }
+  #navegador {
+    margin: 0px 0px 0px auto;
+    width: 40%;
+  }
+  #title {
+    font-size: 34px;
+  }
+  #creador {
+    margin-left: 60px;
+    margin-top: 5px;
+  }
+  #cuadricula {
+    width: 50%;
+    height: 100%;
+  }
+  #blogs-titulo {
+    width: 50%;
+  }
+  #blog {
+    width: 100%;
+    height: 50%;
+  }
+  #blog-img {
+    width: 75px;
+    height: 75px;
+    margin-right: 20px;
+  }
+  #texto-blog {
+    font-size: 14px;
+    margin: 0px auto 0px auto;
+    width: 70%;
+    height: 100%;
+  }
+  #texto-blog p {
+    margin: 10px 0px 0px 0px;
+  }
+  #fecha {
+    margin-right: -30px;
+  }
+  #boton-editar {
+    margin-left: auto;
+    margin-right: 0px;
+  }
+  #cuerpo-blog {
+    margin-bottom: -10px;
+    width: 100%;
+  }
+  #submit {
+    margin-top: 15px;
+  }
+  .botones {
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+}
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyCoderSpace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Titan+One&display=swap" rel="stylesheet">
+</head>
+
+<body>   
+  <header>
+    <img src="https://res.cloudinary.com/dk-find-out/image/upload/q_70,c_pad,w_1200,h_630,f_auto/cube_icon_kjijxo.jpg">
+    <h1 id="title">MyCoderSpace</h1>
+  </header>
+  <div id="cuerpo">
+    <div id="cuadricula">
+      <div id="blog">
+        <div id="texto-blog"> 
+            <h2 id="iniciar-sesion">Iniciar Sesión</h2>
+            <form method="POST">
+
+                {% csrf_token %}
+                {{form.as_p}}
+
+                <button id="submit" type="submit">Iniciar Sesión</button>
+
+            </form>
+            <p>o</p><a class="botones" href="{% url 'create_user' %}"><button type="button">Crear cuenta</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>  
+    
+
+   

@@ -3,7 +3,33 @@
 {% load static %}
 
 {% block contenidoDinamico %}
-
-   
+    <div id="cuerpo"> 
+        <h2 id="blogs-titulo">Coders Hoy</h2>   
+        <div id="cuadricula">
+                {% if object_list %}
+                {% for blog in object_list %}                    
+                    <div id="blog">  
+                        <div id="blog-img"><img src='{{blog.imagen}}'></div>          
+                        <div id="texto-blog">
+                            <div id="top-blog">
+                                <p id="autor">Por: {{blog.autor}}</p>
+                                <p id="fecha">{{blog.fecha_creacion}}</p>
+                                <a id="boton-editar" href="{% url 'update' blog.id %}"><img src="https://i.imgur.com/M5UUJeV.png"></a>
+                                <a id="boton-borrar" href="{% url 'delete' blog.id %}"><img src="https://i.imgur.com/LElED9c.png"></a>
+                            </div>
+                            <p id="titulo">{{blog.titulo}}<a href="{% url 'detail' blog.id %}"><p id="link-leer-mas"> Leer más</p></a>
+                            {% if user.is_authenticated %}
+                            <p id="subtitulo">{{blog.sub_titulo}}</p>
+                            <p id="cuerpo-blog">{{blog.cuerpo|safe}}</p>
+                            {% endif %}
+                        </div>
+                    </div>       
+                {% endfor %}                
+        </div>
+    </div>
+    
+    {% else %}
+<h1> No hay blogs</h1>
+    {% endif %}
 
 {% endblock %}

@@ -1,0 +1,22 @@
+{% extends "createblog.html" %}
+
+{% load static %}
+
+{% block contenidoDinamico %} 
+    <div id="cuerpo">
+        <div id="cuadricula">
+            <div id="borrar-blog">
+                <div id="texto-blog">
+                    <form method="post">
+                        
+                        {% csrf_token %}
+                        <p>¿Está Seguro que quiere borrar "{{ object }}"?</p>
+                        {{ form }}
+                        <input type="submit" value="Confirmar">
+
+                    </form>
+                </div>    
+            </div>    
+        </div>
+    </div>
+{% endblock %}
