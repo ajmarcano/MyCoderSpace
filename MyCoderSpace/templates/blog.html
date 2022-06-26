@@ -15,6 +15,7 @@
                                 <p id="autor">Por: {{blog.autor}}</p>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <p id="fecha">{{blog.fecha_creacion}}</p>
                                 <a id="boton-editar" href="{% url 'update' blog.id %}"><img src="https://i.imgur.com/M5UUJeV.png"></a>
                                 <a id="boton-borrar" href="{% url 'delete' blog.id %}"><img src="https://i.imgur.com/LElED9c.png"></a>
@@ -27,10 +28,13 @@
 =======
 >>>>>>> refs/remotes/origin/main
                                 <p id="fecha">14/06/22</p>
+=======
+                                <p id="fecha">{{blog.fecha_creacion}}</p>
+>>>>>>> f6ca7e7598b410628912125949f7b288ba679a80
                                 <a id="boton-editar" href="{% url 'update' blog.id %}"><img src="https://i.imgur.com/M5UUJeV.png"></a>
                                 <a id="boton-borrar" href="{% url 'delete' blog.id %}"><img src="https://i.imgur.com/LElED9c.png"></a>
                             </div>
-                            <a href="{% url 'detail' blog.id %}"><p id="titulo">{{blog.titulo}}</p></a>
+                            <p id="titulo">{{blog.titulo}}<a href="{% url 'detail' blog.id %}"><p id="link-leer-mas"> Leer más</p></a>
                             {% if user.is_authenticated %}
                             <p id="subtitulo">{{blog.sub_titulo}}</p>
                             <p id="cuerpo-blog">{{blog.cuerpo}}</p>

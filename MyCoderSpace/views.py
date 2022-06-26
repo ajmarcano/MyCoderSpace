@@ -79,6 +79,12 @@ def About(request):
 
     return HttpResponse(template.render(context, request))
 
+def Home(request):
+    template = loader.get_template("home.html")
+    context={}
+
+    return HttpResponse(template.render(context, request))
+
 
 
 
