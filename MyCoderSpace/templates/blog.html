@@ -17,7 +17,7 @@
                                 <a id="boton-editar" href="{% url 'update' blog.id %}"><img src="https://i.imgur.com/M5UUJeV.png"></a>
                                 <a id="boton-borrar" href="{% url 'delete' blog.id %}"><img src="https://i.imgur.com/LElED9c.png"></a>
                             </div>
-                            <a href="{% url 'detail' blog.id %}"><p id="titulo">{{blog.titulo}}</p></a>
+                            <p id="titulo">{{blog.titulo}}<a href="{% url 'detail' blog.id %}"><p id="link-leer-mas"> Leer más</p></a>
                             {% if user.is_authenticated %}
                             <p id="subtitulo">{{blog.sub_titulo}}</p>
                             <p id="cuerpo-blog">{{blog.cuerpo}}</p>
