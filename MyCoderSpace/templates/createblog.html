@@ -2,17 +2,24 @@
 <html lang="en">
 <style>
 header {
+<<<<<<< HEAD
   background: rgb(61, 61, 61);
+=======
+  background: white;
+>>>>>>> refs/remotes/origin/main
   display: flex;
   height: 60px;
   color: #0D9EFA;
 }
+<<<<<<< HEAD
 header a {
   text-decoration: none;
 }
 header a:visited {
   color: #0D9EFA;
 }
+=======
+>>>>>>> refs/remotes/origin/main
 #title {
   margin-top: 5px;
   font-family: 'Titan One', cursive;
@@ -40,6 +47,7 @@ nav a {
   padding-top: 5px;
   font-size: 18px;
 }
+<<<<<<< HEAD
 nav a:link {
   color: #0D9EFA;
 }
@@ -47,6 +55,15 @@ nav a:visited {
   color: #0D9EFA;
 }
 nav a:hover {
+=======
+a:link {
+  color: #0D9EFA;
+}
+a:visited {
+  color: #0D9EFA;
+}
+a:hover {
+>>>>>>> refs/remotes/origin/main
   background: #DCF3FA;
 }
 nav p {
@@ -57,9 +74,15 @@ body, html {
   margin: 0px;
   padding: 0px;
   font-family: 'Mukta', sans-serif;
+<<<<<<< HEAD
   color: white;
   border: 0px;
   background: white;
+=======
+  color: black;
+  border: 0px;
+  background: lightgray;
+>>>>>>> refs/remotes/origin/main
 }
 #cuerpo {
   display: flex;
@@ -95,8 +118,13 @@ body, html {
   width: 100%;
   height: 500px;
   margin: 0px auto;
+<<<<<<< HEAD
   background: rgb(61, 61, 61);
   border: 1px solid black;
+=======
+  background: white;
+  border: 1px solid darkgray;
+>>>>>>> refs/remotes/origin/main
   border-radius: 5px;
 }
 #texto-blog {
@@ -175,8 +203,13 @@ h2 {
   width: 100%;
   height: 100px;
   margin: 0px auto;
+<<<<<<< HEAD
   background: rgb(61, 61, 61);
   border: 1px solid black;
+=======
+  background: white;
+  border: 1px solid darkgray;
+>>>>>>> refs/remotes/origin/main
   border-radius: 5px;
   text-align: center;
   padding-top: 20px;
@@ -199,6 +232,10 @@ h2 {
   }
 }
 </style>
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/main
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -212,7 +249,11 @@ h2 {
 <body>   
     <header>
         <img src="https://res.cloudinary.com/dk-find-out/image/upload/q_70,c_pad,w_1200,h_630,f_auto/cube_icon_kjijxo.jpg">
+<<<<<<< HEAD
         <a href="{% url 'principal' %}"><h1 id="title">MyCoderSpace</h1></a>
+=======
+        <h1 id="title">MyCoderSpace</h1>
+>>>>>>> refs/remotes/origin/main
         <nav>
         {% if user.is_authenticated %}
         
@@ -220,7 +261,11 @@ h2 {
         {% else %}
             <a href="{% url 'login' %}"><p>Iniciar Sesión</p></a>
             <a href="{% url 'create_user' %}"><p>Crear Cuenta</p></a>
+<<<<<<< HEAD
             <a href="{% url 'home' %}">Volver a Página Principal</a>
+=======
+            <a href="{% url 'home' %}" class="navegador"><p>Volver a Página Principal</p></a>
+>>>>>>> refs/remotes/origin/main
         {% endif %}
         </nav>
     </header>
@@ -230,6 +275,7 @@ h2 {
                 <div id="blog">
                     <div id="texto-blog"> 
                         <h2>Crear Blog</h2>
+<<<<<<< HEAD
                             <form method="post">
                               {% csrf_token %}
                               <label><p>Titulo</p> {{ form.titulo }}</label>
@@ -238,6 +284,16 @@ h2 {
                               <label><p>Imagen</p>{{ form.imagen }}</label>
                               <input id="boton-guardar" type="submit" value="Guardar">
                           </form>                        
+=======
+                        <form method="post">
+                            {% csrf_token %}
+                            <label><p>Titulo</p> {{ form.titulo }}</label>
+                            <label><p>Subtitulo</p>{{ form.sub_titulo }}</label>
+                            <label><p>Cuerpo</p>{{ form.cuerpo }}</label>
+                            <label><p>Imagen</p>{{ form.imagen }}</label>
+                            <input id="boton-guardar" type="submit" value="Guardar">
+                        </form>
+>>>>>>> refs/remotes/origin/main
                     </div>
                 </div>
             </div>

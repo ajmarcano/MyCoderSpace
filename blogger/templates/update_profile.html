@@ -53,7 +53,6 @@ body, html {
   color: black;
   border: 0px;
   background: lightgray;
-  height: 100%;
 }
 #cuerpo {
   display: flex;
@@ -71,20 +70,30 @@ body, html {
   width: 30%;
   margin: 0px auto;
 }
+#blogs-titulo {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 25px;
+  background: white;
+  height: 5%;
+  border: 1px solid darkgray;
+  border-radius: 5px;
+}
 #blog {
   display: flex;
-  width: 80%;
-  height: 35%;
+  width: 100%;
+  height: 30%;
   margin: 10px auto;
   background: white;
   border: 1px solid darkgray;
   border-radius: 5px;
 }
-#iniciar-sesion {
-    text-align: center;
+h2 {
+  text-align: center;
 }
 #texto-blog {
-  margin: 0px auto 20px auto;
+  margin: -10px 40px 20px 40px;
 }
 #blog-img {
   margin: auto 20px;
@@ -155,7 +164,7 @@ body, html {
   }
   #texto-blog {
     font-size: 14px;
-    margin: 0px auto 0px auto;
+    margin: 0px auto 20px auto;
     width: 70%;
     height: 100%;
   }
@@ -173,13 +182,6 @@ body, html {
     margin-bottom: -10px;
     width: 100%;
   }
-  #submit {
-    margin-top: 15px;
-  }
-  .botones {
-    margin-top: 10px;
-    margin-bottom: 0px;
-  }
 }
 </style>
 
@@ -194,35 +196,30 @@ body, html {
 </head>
 
 <body>   
-  <header>
-    <img src="https://res.cloudinary.com/dk-find-out/image/upload/q_70,c_pad,w_1200,h_630,f_auto/cube_icon_kjijxo.jpg">
-    <h1 id="title">MyCoderSpace</h1>
-  </header>
-  <div id="cuerpo">
-    <div id="cuadricula">
-      <div id="blog">
-        <div id="texto-blog"> 
-            <h2 id="iniciar-sesion">Iniciar Sesión</h2>
-            <form method="POST">
-
-                {% csrf_token %}
-                {{form.as_p}}
-
-<<<<<<< HEAD
-   o <form action="create_user" method="GET">
-        <button type="button">Crear cuenta</button>
-    </form>
-=======
-                <button id="submit" type="submit">Iniciar Sesión</button>
-
-            </form>
-            <p>o</p><a class="botones" href="{% url 'create_user' %}"><button type="button">Crear cuenta</button></a>
+    <header>
+        <img src="https://res.cloudinary.com/dk-find-out/image/upload/q_70,c_pad,w_1200,h_630,f_auto/cube_icon_kjijxo.jpg">
+        <h1 id="title">MyCoderSpace</h1>
+        <nav>
+        {% if user.is_authenticated %}
+        <a href="{% url 'profile' user.id %}">Volver al perfil</a>
+        {% else %}
+            <a href="{% url 'login' %}"><p>Iniciar Sesión</p></a>
+            <a href="{% url 'create_user' %}"><p>Crear Cuenta</p></a>
+        {% endif %}
+        </nav>
+    </header>
+    <div id="cuerpo">
+        <div id="cuadricula">
+            <div id="blog">
+                <div id="texto-blog">
+                    <h2>Editar Perfil</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type="submit" value="Guardar">
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-</body>  
-    
-
-   
->>>>>>> refs/remotes/origin/main
+</body>

@@ -2,7 +2,11 @@
 <html lang="en">
 <style>
 header {
+<<<<<<< HEAD
   background: rgb(61, 61, 61);
+=======
+  background: white;
+>>>>>>> refs/remotes/origin/main
   display: flex;
   height: 60px;
   color: #0D9EFA;
@@ -50,9 +54,15 @@ body, html {
   margin: 0px;
   padding: 0px;
   font-family: 'Mukta', sans-serif;
+<<<<<<< HEAD
   color: white;
   border: 0px;
   background: white;
+=======
+  color: black;
+  border: 0px;
+  background: lightgray;
+>>>>>>> refs/remotes/origin/main
   height: 100%;
 }
 #cuerpo {
@@ -67,17 +77,28 @@ body, html {
 }
 #cuadricula {
   display: inline-block;
+<<<<<<< HEAD
   height: 100%;
+=======
+  height: 92%;
+>>>>>>> refs/remotes/origin/main
   width: 30%;
   margin: 0px auto;
 }
 #blog {
   display: flex;
   width: 100%;
+<<<<<<< HEAD
   height: 65%;
   margin: 10px auto;
   background: rgb(61, 61, 61);
   border: 1px solid black;
+=======
+  height: 30%;
+  margin: 10px auto;
+  background: white;
+  border: 1px solid darkgray;
+>>>>>>> refs/remotes/origin/main
   border-radius: 5px;
 }
 #iniciar-sesion {
@@ -206,11 +227,18 @@ body, html {
       <div id="blog">
         <div id="texto-blog"> 
             <h2 id="iniciar-sesion">Crear Cuenta</h2>
+<<<<<<< HEAD
             <form method="POST">
               {% csrf_token %} 
               {{form.as_p}}
               <br>
               <input type="submit" value ="Crear Cuenta"/> 
+=======
+            <form action ="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Crear Cuenta">
+>>>>>>> refs/remotes/origin/main
             </form>
         </div>
       </div>
