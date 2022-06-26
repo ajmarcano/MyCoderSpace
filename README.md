@@ -1,4 +1,4 @@
-# Proyecto "pagina tipo blog": "MyCoderSpace" para trabajo final de CoderHouse
+# Proyecto "pagina tipo blog": "MyCoderSpace" para trabajo final de CoderHouse por Alejandro Barrios y Alvaro Marcano
 
 Entrega final para curso de python de CoderHouse con temática de "pagina tipo blog". 
 
@@ -35,3 +35,17 @@ usuario son creados automáticamente por el sistema
 
 Se accede por la barra de navegación y solo son visibles cuando el usuario no está loggeado
 
+## Distribución de Tareas
+
+* ### Alejandro Barrios 
+1. Creacion de CRUD de Blogs en views
+2. Creacion de Modelo de Blog
+3. Creacion de plantilla de About Us
+4. Creado UserMixing de blogs
+
+* ### Alvaro Marcano
+1. Creado sistema de Login, Logout, SignUp
+2. Creadas plantillas de blog y de perfiles incluyendo HTML/CSS
+3. Agregado Modelo y Sistema de Avatares
+4. Creados casos de prueba
+5. Creacion de README
