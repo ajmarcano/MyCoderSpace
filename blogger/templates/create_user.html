@@ -67,14 +67,14 @@ body, html {
 }
 #cuadricula {
   display: inline-block;
-  height: 92%;
+  height: 100%;
   width: 30%;
   margin: 0px auto;
 }
 #blog {
   display: flex;
   width: 100%;
-  height: 50%;
+  height: 65%;
   margin: 10px auto;
   background: rgb(61, 61, 61);
   border: 1px solid black;
@@ -206,10 +206,11 @@ body, html {
       <div id="blog">
         <div id="texto-blog"> 
             <h2 id="iniciar-sesion">Crear Cuenta</h2>
-            <form action ="" method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <input type="submit" value="Crear Cuenta">
+            <form method="POST">
+              {% csrf_token %} 
+              {{form.as_p}}
+              <br>
+              <input type="submit" value ="Crear Cuenta"/> 
             </form>
         </div>
       </div>
