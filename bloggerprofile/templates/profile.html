@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+header {
+  background: rgb(61, 61, 61);
+  display: flex;
+  height: 60px;
+  color: #0D9EFA;
+}
+header a {
+  text-decoration: none;
+}
+header a:visited {
+  color: #0D9EFA;
+}
+#title {
+  margin-top: 5px;
+  font-family: 'Titan One', cursive;
+  font-size: 40px;
+  font-weight: normal
+}
+nav{
+  display: flex;
+  margin-left: auto;
+  margin-right: 200px;
+  width: 15%;
+  font-size: 20px;
+  justify-content: space-around;
+  font-weight: bold;
+}
+nav a {
+  border: 2px solid #0D9EFA;
+  border-radius: 15px;
+  height: 30px;
+  width: 120px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 12px;
+  padding-top: 5px;
+  font-size: 18px;
+}
+nav a:link {
+  color: #0D9EFA;
+}
+nav a:visited {
+  color: #0D9EFA;
+}
+nav a:hover {
+  background: #DCF3FA;
+}
+nav p {
+  margin: 0px;
+  padding: 0px;
+}
+body, html {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Mukta', sans-serif;
+  color: white;
+  border: 0px;
+  background: white;
+}
+#cuerpo {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  width: 100%;
+}
+#cuadricula {
+  display: inline-block;
+  height: 92%;
+  width: 30%;
+  margin: 0px auto;
+}
+#blogs-titulo {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 25px;
+  background: rgb(61, 61, 61);
+  height: 5%;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+#blog {
+  display: flex;
+  width: 100%;
+  height: 30%;
+  margin: 10px auto;
+  background: rgb(61, 61, 61);
+  border: 1px solid black;
+  border-radius: 5px;
+}
+#texto-blog {
+  margin: 10px auto;
+  width: 90%;
+}
+h2 {
+  margin-top: 0px;
+  text-align: center;
+}
+#blog-img {
+  margin: 0px auto;
+  width: 40%;
+  border-radius: 15px;
+}
+#autor {
+  display: inline-block;
+}
+#fecha {
+  display: inline-block;
+  margin-top: 0px;
+  margin-left: 20px;
+}
+#titulo {
+  font-size: 20px;
+  margin-top: -15px;
+}
+#subtitulo {
+  margin-top: -30px;
+}
+#cuerpo-blog {
+  width: 400px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 1720px){
+  #cuadricula {
+    width: 50%;
+  }
+  #title {
+    font-size: 34px;
+  }
+  nav {
+    width: 25%;
+    margin-left: auto;
+    margin-right: 0px;
+  }
+  nav a {
+    font-size: 14px;
+    width: 40%;
+    height: 1.8em;
+    margin-top: 15px;
+  }
+}
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyCoderSpace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Titan+One&display=swap" rel="stylesheet">
+</head>
+
+<body>   
+  <header>
+    <img src="https://res.cloudinary.com/dk-find-out/image/upload/q_70,c_pad,w_1200,h_630,f_auto/cube_icon_kjijxo.jpg">
+    <a href="{% url 'principal' %}"><h1 id="title">MyCoderSpace</h1></a>
+    <nav>
+    {% if user.is_authenticated %}
+    <a href="{% url 'home' %}">Volver a Home</a>
+    <a href="{% url 'update_profile' user.id %}">Editar Perfil</a>
+    {% else %}
+      <a href="{% url 'login' %}"><p>Iniciar Sesión</p></a>
+      <a href="{% url 'create_user' %}"><p>Crear Cuenta</p></a>
+    {% endif %}
+    </nav>
+  </header>
+  <div id="cuerpo">
+    <div id="cuadricula">
+      <div id="blog">
+        <div id="texto-blog"> 
+          <h2>Mi Perfil</h2>
+            <img id="blog-img" src="{{ object.avatar_set.first.imagen.url }}"/>
+            <p>Nombre: {{object.first_name}}</p>
+            <p>Apellido: {{object.last_name}}</p>
+            <p>Correo electronico: {{object.email}}</p>
+            <p>Nombre de Usuario: {{object.username}}</p>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>     

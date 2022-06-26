@@ -1,14 +1,13 @@
+<<<<<<< HEAD
+=======
 from django.db import models
 from django.contrib.auth.models import User
+>>>>>>> f6ca7e7598b410628912125949f7b288ba679a80
 
-class Blogger(models.Model):
-    nombre = models.CharField(max_length=10)
-    apellido = models.CharField(max_length=10)
-    email = models.EmailField()
-    
-    def __str__(self):
-        return self.nombre
 
+<<<<<<< HEAD
+=======
 class Avatar(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     imagen = models.ImageField(upload_to="avatares", null=True, blank=True)
+>>>>>>> f6ca7e7598b410628912125949f7b288ba679a80

@@ -47,16 +47,34 @@ class BlogDelete(LoginRequiredMixin,UserPassesTestMixin, DeleteView):
         exist = BlogModel.objects.filter(autor=self.request.user.id, id=self.kwargs['pk'])
         return True if exist else False
 
+<<<<<<< HEAD
+def About(request):
+    template = loader.get_template('About.html')
+    context={}
+=======
 class BlogLogin(LoginView):
     template_name = 'login.html'
     next_page = reverse_lazy("home")
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/main
+=======
+>>>>>>> refs/remotes/origin/main
 
+    return HttpResponse(template.render(context, request))
 
+<<<<<<< HEAD
+def Home(request):
+    template = loader.get_template("home.html")
+=======
 class BlogLogout(LogoutView):
     template_name = 'logout.html'
 
 def About(request):
     template = loader.get_template('About.html')
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/main
+=======
+>>>>>>> refs/remotes/origin/main
     context={}
 
     return HttpResponse(template.render(context, request))
