@@ -1,10 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-<<<<<<< HEAD
 from ckeditor_uploader.fields import RichTextUploadingField
-=======
-from ckeditor.fields import RichTextField
->>>>>>> f6ca7e7598b410628912125949f7b288ba679a80
 
 class BlogModel(models.Model):
     titulo = models.CharField(max_length=100)
