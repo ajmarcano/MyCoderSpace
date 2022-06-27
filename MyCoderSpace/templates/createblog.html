@@ -61,6 +61,7 @@ body, html {
   color: white;
   border: 0px;
   background: white;
+  height: 100%;
 }
 #cuerpo {
   display: flex;
@@ -74,8 +75,8 @@ body, html {
 }
 #cuadricula {
   display: inline-block;
-  height: 92%;
-  width: 30%;
+  height: 100%;
+  width: 60%;
   margin-bottom: 0px;
   margin-top: 0px;
   margin-right: auto;
@@ -94,7 +95,7 @@ body, html {
 #blog {
   display: flex;
   width: 100%;
-  height: 500px;
+  height: 91%;
   margin: 0px auto;
   background: rgb(61, 61, 61);
   border: 1px solid black;
@@ -199,6 +200,9 @@ h2 {
     margin-top: 15px;
   }
 }
+#form-cuerpo{
+  width: 30%;
+}
 </style>
 <head>
     <meta charset="UTF-8">
@@ -235,8 +239,8 @@ h2 {
                               {% csrf_token %}
                               <label><p>Titulo</p> {{ form.titulo }}</label>
                               <label><p>Subtitulo</p>{{ form.sub_titulo }}</label>
-                              <label><p>Cuerpo</p>{{ form.cuerpo }} {{ form.media }}</label>
-                              <label><p>Imagen</p>{{ form.imagen }}</label>
+                              <label><p>Cuerpo</p><span id ="form-cuerpo">{{form.cuerpo}}{{form.media}}</span></label>
+                              <label><p>URL de Imagen</p>{{ form.imagen }}</label>
                               <input id="boton-guardar" type="submit" value="Guardar">
                           </form>
                     </div>

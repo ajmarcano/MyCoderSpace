@@ -17,7 +17,7 @@ class BloggerProfile(DetailView):
 class BloggerUpdate(LoginRequiredMixin, UpdateView):
     model = User
     template_name = "update_profile.html"
-    fields = ["username", "email", "first_name", "last_name"]
+    fields = ["username", "email", "first_name", "last_name", ]
     success_message = '¡Perfil actualizado satisfactoriamente!'
     
     def get_success_url(self):
