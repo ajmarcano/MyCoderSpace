@@ -49,3 +49,7 @@ Se accede por la barra de navegación y solo son visibles cuando el usuario no e
 3. Agregado Modelo y Sistema de Avatares
 4. Creados casos de prueba
 5. Creacion de README
+
+## Video Descriptivo de la pagina
+
+[Link a video de la página](https://drive.google.com/drive/folders/1mANpydfqjtUn6tpz8j51Vh6tBXeuaGNv)
