@@ -3,6 +3,20 @@
 {% load static %}
 
 {% block contenidoDinamico %}
+{% if user.is_authenticated %}
+      <div id="creador">
+        <a id="link-crear-blog" href="{% url 'create' %}"><p id="crear-blog-boton">Crear un nuevo Blog</p></a>
+      </div>
+      <div id="navegador">
+        <a href="{% url 'profile' user.id %}" class="navegador"><p>Ir a mi perfil</p></a>
+        <a href="{% url 'logout' %}" class="navegador"><p>Cerrar Sesión</p></a>
+      {% else %}
+        <a href="{% url 'login' %}" class="navegador"><p>Iniciar Sesión</p></a>
+        <a href="{% url 'create_user' %}" class="navegador"><p>Crear Cuenta</p></a>
+      </div>
+      {% endif %}
+    </nav>
+</header>
     <div id="cuerpo"> 
         <h2 id="blogs-titulo">Coders Hoy</h2>   
         <div id="cuadricula">

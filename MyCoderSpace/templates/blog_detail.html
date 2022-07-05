@@ -1,9 +1,12 @@
-{% extends "createblog.html" %}
+{% extends "index.html" %}
 
 {% load static %}
 
 {% block contenidoDinamico %}
 <style>
+.navegador {
+  width: 80%;
+}
 #blog {
   height: 60%;
 }
@@ -11,6 +14,7 @@
   margin: 20px;
 }
 #titulo {
+  display: block;
   margin-top: 10px;
   font-size: 24px;
   font-weight: 800;
@@ -23,9 +27,21 @@
   margin-top: 20px;
 }
 #imagen {
-  width: 40%;
+  width: 100%;
 }
 </style>
+<div id="navegador">
+  {% if user.is_authenticated %}
+  
+    <a href="{% url 'home' %}" class="navegador">Volver a Página Principal</a>
+  {% else %}
+    <a href="{% url 'login' %}" class="navegador"><p>Iniciar Sesión</p></a>
+    <a href="{% url 'create_user' %}" class="navegador"><p>Crear Cuenta</p></a>
+    <a href="{% url 'home' %}" class="navegador"><p>Volver a Página Principal</p></a>
+  {% endif %}
+</div>
+</nav>
+</header>
     <div id="cuerpo">
       <div id="cuadricula">
         <div id="blog">

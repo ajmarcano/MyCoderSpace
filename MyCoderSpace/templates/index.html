@@ -393,11 +393,15 @@ footer {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Titan+One&display=swap" rel="stylesheet">
 </head>
+<html>
 <body>
   <header>
-    <img src="https://res.cloudinary.com/dk-find-out/image/upload/q_70,c_pad,w_1200,h_630,f_auto/cube_icon_kjijxo.jpg">
+    <img id="icono-blog" src="https://res.cloudinary.com/dk-find-out/image/upload/q_70,c_pad,w_1200,h_630,f_auto/cube_icon_kjijxo.jpg">
     <a href="{% url 'principal' %}"><h1 id="title">MyCoderSpace</h1></a>
     <nav>
+      {% block contenidoDinamico %}
+
+
       {% if user.is_authenticated %}
       <div id="creador">
         <a id="link-crear-blog" href="{% url 'create' %}"><p id="crear-blog-boton">Crear un nuevo Blog</p></a>
@@ -412,9 +416,10 @@ footer {
       {% endif %}
     </nav>
   </header>
-  {% block contenidoDinamico %}
+  
     
-  {% endblock %}
+  
+      {% endblock %}
 </body>
 <footer>
   
